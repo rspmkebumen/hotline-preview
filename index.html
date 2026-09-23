@@ -921,10 +921,6 @@
         return;
       }
 
-      const socialButton = event.target.closest("[data-social]");
-      if (socialButton) {
-        showToast(`Link ${socialButton.dataset.social} belum diatur.`);
-      }
     });
 
     renderServices();
