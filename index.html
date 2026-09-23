@@ -636,7 +636,7 @@
       <section class="hero" aria-label="Hotline utama">
         <small>HOTLINE RESMI</small>
         <h2>Satu pintu untuk bantuan dan akses layanan RS.</h2>
-        <p>Pilih layanan yang Anda butuhkan. Untuk keadaan darurat, gunakan tombol IGD agar tersambung lebih cepat.</p>
+        <p>Pilih layanan yang Anda butuhkan. Untuk keadaan darurat, gunakan tombol UGD agar tersambung lebih cepat.</p>
 
         <div class="emergency">
           <div>
@@ -645,7 +645,7 @@
           </div>
           <button class="call-button" type="button" data-action="emergency">
             <span aria-hidden="true">☎</span>
-            Hubungi IGD
+            Hubungi UGD
           </button>
         </div>
       </section>
@@ -872,8 +872,8 @@
     function handleAction(action) {
       const actions = {
         emergency: () => goTo(
-          `https://wa.me/${igdWhatsapp}?text=${encodeURIComponent("Halo RSU Permata Medika Kebumen, saya membutuhkan layanan IGD.")}`,
-          "Nomor WhatsApp IGD belum diatur."
+          `https://wa.me/${igdWhatsapp}?text=${encodeURIComponent("Halo RSU Permata Medika Kebumen, saya membutuhkan layanan UGD.")}`,
+          "Nomor WhatsApp UGD belum diatur."
         ),
         ambulance: () => goTo(
           `https://wa.me/${ambulanceWhatsapp}?text=${encodeURIComponent("Halo RSU Permata Medika Kebumen, saya ingin pesan ambulance.")}`,
