@@ -305,20 +305,23 @@
     }
 
     .quick .icon {
-      width: 50px;
+      width: 62px;
+      height: 62px;
       aspect-ratio: 1;
       display: grid;
       place-items: center;
-      border-radius: 17px;
-      color: var(--green-800);
-      background: linear-gradient(145deg, #fffdf8, #f1e7d1);
-      border: 1px solid rgba(198, 161, 90, .38);
-      box-shadow: 0 8px 18px rgba(5, 40, 31, .09);
+      border-radius: 19px;
+      color: var(--quick-b, var(--green-800));
+      background: linear-gradient(145deg, rgba(255,255,255,.98), var(--quick-tint, #f1e7d1));
+      border: 1.5px solid color-mix(in srgb, var(--quick-a, #c6a15a) 48%, white);
+      box-shadow: 0 10px 22px rgba(5, 40, 31, .11), inset 0 1px 0 rgba(255,255,255,.8);
     }
 
     .quick .icon svg {
-      width: 27px;
-      height: 27px;
+      width: 35px;
+      height: 35px;
+      stroke: currentColor;
+      stroke-width: 2.15;
       filter: none;
     }
 
@@ -409,20 +412,23 @@
     }
 
     .service .icon {
-      width: 54px;
+      width: 64px;
+      height: 64px;
       aspect-ratio: 1;
       display: grid;
       place-items: center;
-      border-radius: 18px;
-      color: var(--green-800);
-      background: linear-gradient(145deg, #fffdf8, #f1e7d1);
-      border: 1px solid rgba(198, 161, 90, .38);
-      box-shadow: 0 9px 20px rgba(5, 40, 31, .09);
+      border-radius: 20px;
+      color: var(--tone-b, var(--green-800));
+      background: linear-gradient(145deg, rgba(255,255,255,.98), var(--tone-tint, #f1e7d1));
+      border: 1.5px solid color-mix(in srgb, var(--tone-a, #c6a15a) 48%, white);
+      box-shadow: 0 11px 24px var(--tone-shadow, rgba(5,40,31,.1)), inset 0 1px 0 rgba(255,255,255,.82);
     }
 
     .service .icon svg {
-      width: 29px;
-      height: 29px;
+      width: 37px;
+      height: 37px;
+      stroke: currentColor;
+      stroke-width: 2.15;
       filter: none;
     }
 
@@ -483,23 +489,40 @@
     }
 
     .social-icon {
-      width: 42px;
+      width: 50px;
+      height: 50px;
       aspect-ratio: 1;
       display: grid;
       place-items: center;
-      border-radius: 13px;
-      color: var(--green-900);
-      background: linear-gradient(145deg, #fffdf8, #f1e7d1);
-      border: 1px solid rgba(198, 161, 90, .34);
-      box-shadow: 0 8px 16px rgba(5, 40, 31, .1);
+      border-radius: 15px;
+      border: 0;
+      box-shadow: 0 9px 18px rgba(5, 40, 31, .11);
     }
 
-    .social-icon.instagram,
-    .social-icon.tiktok,
-    .social-icon.facebook,
+    .social-icon svg {
+      width: 29px;
+      height: 29px;
+      stroke-width: 2.1;
+    }
+
+    .social-icon.instagram {
+      color: #e1306c;
+      background: linear-gradient(145deg, #f58529, #dd2a7b 55%, #8134af);
+    }
+
+    .social-icon.tiktok {
+      color: #ffffff;
+      background: linear-gradient(145deg, #111111, #252525);
+    }
+
+    .social-icon.facebook {
+      color: #ffffff;
+      background: linear-gradient(145deg, #1877f2, #0b5dcc);
+    }
+
     .social-icon.youtube {
-      background: linear-gradient(145deg, #fffdf8, #f1e7d1);
-      color: var(--green-900);
+      color: #ffffff;
+      background: linear-gradient(145deg, #ff3b30, #cc0000);
     }
 
     .site-footer {
