@@ -305,17 +305,22 @@
     }
 
     .quick .whatsapp-logo {
+      width: 66px;
+      height: 66px;
+      padding: 0;
       background: transparent;
       border: 0;
       box-shadow: none;
-      width: 66px;
-      height: 66px;
+      overflow: visible;
     }
-    .quick .whatsapp-logo svg {
-      width: 50px;
-      height: 50px;
+    .quick .whatsapp-logo::after { display: none; }
+    .quick .whatsapp-logo img {
+      width: 60px;
+      height: 58px;
+      object-fit: contain;
       display: block;
-      filter: drop-shadow(0 4px 5px rgba(0,0,0,.14));
+      filter: drop-shadow(0 4px 5px rgba(0,0,0,.13));
+      border-radius: 14px;
     }
 
     .quick .icon {
@@ -740,11 +745,7 @@
       <section class="quick-actions" aria-label="Akses cepat">
         <button class="quick" type="button" data-action="whatsapp" style="--quick-a:#26c281;--quick-b:#08734f;--quick-tint:#e7f8ef;">
           <span class="icon whatsapp-logo" aria-hidden="true">
-            <svg viewBox="0 0 32 32">
-              <circle cx="16" cy="16" r="13.2" fill="#25D366"/>
-              <path fill="#fff" d="M11.7 9.5c.4-.4 1-.5 1.5-.2l2 1.1c.5.3.7.9.4 1.4l-.8 1.2c-.2.3-.2.7 0 1 1 1.6 2.3 2.8 4 3.7.3.2.7.1.9-.1l1-1c.4-.4 1-.4 1.4-.1l1.6 1.1c.5.3.6 1 .3 1.5-.8 1.2-2 1.9-3.4 1.8-2.7-.2-6.1-2.1-8.6-4.7-2.3-2.4-3.6-5.2-3.5-7.1 0-.9.4-1.8 1.2-2.7z"/>
-              <path fill="#25D366" d="M10.5 22.5 12 19l2.1 1.7z"/>
-            </svg>
+            <img src="assets/whatsapp-menu.svg" alt="" />
           </span>
           <span>
             <strong>WhatsApp CS</strong>
