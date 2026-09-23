@@ -305,24 +305,36 @@
     }
 
     .quick .icon {
-      width: 62px;
-      height: 62px;
-      aspect-ratio: 1;
+      width: 66px;
+      height: 66px;
       display: grid;
       place-items: center;
-      border-radius: 19px;
+      border-radius: 20px;
       color: var(--quick-b, var(--green-800));
-      background: linear-gradient(145deg, rgba(255,255,255,.98), var(--quick-tint, #f1e7d1));
-      border: 1.5px solid color-mix(in srgb, var(--quick-a, #c6a15a) 48%, white);
-      box-shadow: 0 10px 22px rgba(5, 40, 31, .11), inset 0 1px 0 rgba(255,255,255,.8);
+      background: var(--quick-tint, #f4f8f5);
+      border: 1px solid rgba(0,0,0,.045);
+      box-shadow: 0 2px 4px rgba(0,0,0,.06), 0 7px 16px rgba(0,0,0,.08), inset 0 1px 0 rgba(255,255,255,.9);
+      transition: transform .18s ease, box-shadow .18s ease;
     }
-
+    .quick .icon::after {
+      content: "";
+      position: absolute;
+      inset: 2px;
+      border-radius: 18px;
+      pointer-events: none;
+      background: linear-gradient(145deg, rgba(255,255,255,.5), transparent 45%);
+    }
+    .quick:hover .icon {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,.06), 0 11px 22px rgba(0,0,0,.10);
+    }
     .quick .icon svg {
-      width: 35px;
-      height: 35px;
+      width: 38px;
+      height: 38px;
       stroke: currentColor;
-      stroke-width: 2.15;
-      filter: none;
+      stroke-width: 2.05;
+      position: relative;
+      z-index: 1;
     }
 
     .quick strong {
@@ -412,21 +424,33 @@
     }
 
     .service .icon {
-      width: 64px;
-      height: 64px;
-      aspect-ratio: 1;
+      width: 68px;
+      height: 68px;
       display: grid;
       place-items: center;
-      border-radius: 20px;
+      border-radius: 21px;
       color: var(--tone-b, var(--green-800));
-      background: linear-gradient(145deg, rgba(255,255,255,.98), var(--tone-tint, #f1e7d1));
-      border: 1.5px solid color-mix(in srgb, var(--tone-a, #c6a15a) 48%, white);
-      box-shadow: 0 11px 24px var(--tone-shadow, rgba(5,40,31,.1)), inset 0 1px 0 rgba(255,255,255,.82);
+      background: var(--tone-tint, #f4f8f5);
+      border: 1px solid rgba(0,0,0,.045);
+      box-shadow: 0 2px 4px rgba(0,0,0,.06), 0 8px 18px rgba(0,0,0,.085), inset 0 1px 0 rgba(255,255,255,.92);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .service .icon::after {
+      content: "";
+      position: absolute;
+      inset: 2px;
+      border-radius: 19px;
+      pointer-events: none;
+      background: linear-gradient(145deg, rgba(255,255,255,.52), transparent 46%);
+    }
+    .service:hover .icon {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,.06), 0 12px 24px rgba(0,0,0,.10);
     }
 
     .service .icon svg {
-      width: 37px;
-      height: 37px;
+      width: 40px;
+      height: 40px;
       stroke: currentColor;
       stroke-width: 2.15;
       filter: none;
