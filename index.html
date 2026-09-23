@@ -305,22 +305,34 @@
     }
 
     .quick .whatsapp-logo {
-      width: 66px;
-      height: 66px;
-      padding: 0;
-      background: transparent;
-      border: 0;
-      box-shadow: none;
-      overflow: visible;
+      width: 72px !important;
+      height: 72px !important;
+      min-width: 72px;
+      min-height: 72px;
+      padding: 0 !important;
+      margin: 0;
+      position: relative;
+      display: grid !important;
+      place-items: center;
+      background: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
+      overflow: visible !important;
+      flex-shrink: 0;
     }
-    .quick .whatsapp-logo::after { display: none; }
+    .quick .whatsapp-logo::before,
+    .quick .whatsapp-logo::after { display: none !important; }
     .quick .whatsapp-logo img {
-      width: 60px;
-      height: 58px;
-      object-fit: contain;
-      display: block;
-      filter: drop-shadow(0 4px 5px rgba(0,0,0,.13));
+      width: 68px !important;
+      height: 68px !important;
+      max-width: none !important;
+      max-height: none !important;
+      object-fit: contain !important;
+      object-position: center !important;
+      display: block !important;
+      margin: 0;
       border-radius: 14px;
+      filter: drop-shadow(0 4px 5px rgba(0,0,0,.13));
     }
 
     .quick .icon {
