@@ -724,7 +724,87 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
     }
-  </style>
+      /* Mobile-app service cards: deep green theme */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .service {
+      min-height: 92px;
+      display: grid;
+      grid-template-columns: 68px minmax(0, 1fr) 42px;
+      align-items: center;
+      gap: 14px;
+      padding: 13px 14px 13px 13px;
+      border: 1px solid rgba(7,53,41,.09);
+      border-radius: 22px;
+      background: rgba(255,255,255,.95);
+      box-shadow: 0 8px 22px rgba(5,40,31,.08), inset 0 1px 0 rgba(255,255,255,.95);
+      overflow: visible;
+    }
+    .service .icon {
+      width: 66px;
+      height: 66px;
+      display: grid;
+      place-items: center;
+      border-radius: 19px;
+      color: #fff;
+      background: linear-gradient(145deg, var(--tone-b, #073529), var(--tone-a, #116149));
+      border: 0;
+      box-shadow: 0 5px 10px rgba(5,40,31,.12), 0 10px 18px var(--tone-shadow, rgba(5,40,31,.12)), inset 0 1px 0 rgba(255,255,255,.25);
+    }
+    .service .icon::after { display:none; }
+    .service .icon svg {
+      width: 34px;
+      height: 34px;
+      stroke: currentColor;
+      stroke-width: 2.05;
+      position: relative;
+      z-index: 1;
+    }
+    .service h3 {
+      margin: 0;
+      color: #073529;
+      font-size: clamp(16px,4vw,20px);
+      line-height: 1.12;
+      font-weight: 900;
+    }
+    .service p {
+      margin: 5px 0 0;
+      color: #66766e;
+      font-size: 12px;
+      line-height: 1.25;
+      font-weight: 650;
+    }
+    .service-arrow {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #0b4938;
+      background: rgba(17,97,73,.09);
+      font-size: 25px;
+      line-height: 1;
+    }
+    @media (max-width: 640px) {
+      .services { grid-template-columns: 1fr; gap: 10px; }
+      .service {
+        min-height: 88px;
+        grid-template-columns: 62px minmax(0,1fr) 38px;
+        gap: 12px;
+        padding: 11px 12px;
+        border-radius: 21px;
+      }
+      .service .icon { width:62px; height:62px; border-radius:18px; }
+      .service .icon svg { width:32px; height:32px; }
+      .service h3 { font-size:17px; }
+      .service p { font-size:11.5px; }
+      .service-arrow { width:36px; height:36px; font-size:24px; }
+    }
+
+</style>
 </head>
 <body>
   <main class="app">
@@ -855,10 +935,10 @@
         icon: "bpjs",
         href: "https://play.google.com/store/apps/details?id=app.bpjs.mobile",
         colors: {
-          a: "#2563eb",
-          b: "#1e3a8a",
-          tint: "#eaf1ff",
-          text: "#163b75",
+          a: "#0b5d45",
+          b: "#063b2c",
+          tint: "#e7f3ed",
+          text: "#0b4938",
           shadow: "rgba(37, 99, 235, .16)"
         }
       },
@@ -868,10 +948,10 @@
         icon: "register",
         href: website,
         colors: {
-          a: "#14b8a6",
-          b: "#0f766e",
-          tint: "#e6fbf7",
-          text: "#115e59",
+          a: "#138a68",
+          b: "#07543f",
+          tint: "#e5f6ef",
+          text: "#0b4938",
           shadow: "rgba(20, 184, 166, .18)"
         }
       },
@@ -881,10 +961,10 @@
         icon: "doctor",
         href: website,
         colors: {
-          a: "#8b5cf6",
-          b: "#5b21b6",
-          tint: "#f1ecff",
-          text: "#4c1d95",
+          a: "#1a7358",
+          b: "#0a4936",
+          tint: "#eaf5ef",
+          text: "#0b4938",
           shadow: "rgba(139, 92, 246, .18)"
         }
       },
@@ -894,10 +974,10 @@
         icon: "clinic",
         href: website,
         colors: {
-          a: "#06b6d4",
-          b: "#0e7490",
-          tint: "#e7faff",
-          text: "#155e75",
+          a: "#218c68",
+          b: "#0b5742",
+          tint: "#e8f5ef",
+          text: "#0b4938",
           shadow: "rgba(6, 182, 212, .18)"
         }
       },
@@ -907,10 +987,10 @@
         icon: "bed",
         href: website,
         colors: {
-          a: "#22c55e",
-          b: "#15803d",
-          tint: "#ebfaef",
-          text: "#166534",
+          a: "#2b9b69",
+          b: "#0b6848",
+          tint: "#e8f6ed",
+          text: "#0b4938",
           shadow: "rgba(34, 197, 94, .18)"
         }
       },
@@ -920,10 +1000,10 @@
         icon: "promo",
         href: website,
         colors: {
-          a: "#f97316",
-          b: "#c2410c",
-          tint: "#fff2e8",
-          text: "#9a3412",
+          a: "#a27a32",
+          b: "#76551e",
+          tint: "#f7f0df",
+          text: "#634916",
           shadow: "rgba(249, 115, 22, .18)"
         }
       },
@@ -933,10 +1013,10 @@
         icon: "feedback",
         href: "https://wa.me/628112998310?text=Halo Humas RSU Permata Medika Kebumen.%0A%0ASaya ingin menyampaikan saran/kritik mengenai pelayanan.%0A%0ATanggal kunjungan:%0AUnit/Poliklinik:%0ASaran/Kritik:%0A%0AMohon dapat ditindaklanjuti. Terima kasih.",
         colors: {
-          a: "#ec4899",
-          b: "#be185d",
-          tint: "#fff0f7",
-          text: "#9d174d",
+          a: "#147458",
+          b: "#063d2d",
+          tint: "#e6f3ed",
+          text: "#0b4938",
           shadow: "rgba(236, 72, 153, .16)"
         }
       },
@@ -946,10 +1026,10 @@
         icon: "review",
         href: "https://search.google.com/local/writereview?placeid=ChIJf3_cfPfJei4RUdZfPyyp8Ew",
         colors: {
-          a: "#eab308",
-          b: "#a16207",
-          tint: "#fff8dd",
-          text: "#854d0e",
+          a: "#4b9b6f",
+          b: "#176043",
+          tint: "#edf6ef",
+          text: "#0b4938",
           shadow: "rgba(234, 179, 8, .2)"
         }
       }
@@ -1005,6 +1085,7 @@
             <h3>${service.title}</h3>
             <p>${service.description}</p>
           </span>
+          <span class="service-arrow" aria-hidden="true">›</span>
         </button>
       `).join("");
     }
