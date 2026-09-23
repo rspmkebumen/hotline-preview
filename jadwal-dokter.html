@@ -12,7 +12,7 @@ function render(){
  $("#stats").textContent="Menampilkan "+shown.length+" dari "+doctors.length+" jadwal dokter";
  if(!shown.length){$("#list").innerHTML='<div class="empty">Tidak ada jadwal yang cocok dengan pencarian/filter.</div>';return}
  $("#list").innerHTML=shown.map(function(d){
-   const photo=d.image?'<img src="'+esc(d.image)+'" alt="'+esc(d.name)+'" loading="lazy">':'<div class="placeholder">DR</div>';
+   const photo=d.image?'<img src="'+esc(d.image)+'" alt="'+esc(d.name)+'" loading="lazy" onerror="this.parentElement.innerHTML=\'<div class=&quot;placeholder&quot;>DR</div>\'">':'<div class="placeholder">DR</div>';
    return '<article class="card"><div class="photo">'+photo+'</div><div class="body"><h2 class="name">'+esc(d.name||"Jadwal Dokter")+'</h2><div class="badge">'+esc(d.specialty||"Spesialisasi belum diisi")+'</div><div class="schedule">'+esc(d.schedule||"Jadwal belum diisi")+'</div></div></article>';
  }).join("");
 }
