@@ -75,16 +75,16 @@
     }
 
     .mark {
-      width: 48px;
-      aspect-ratio: 1;
+      width: 62px;
+      height: 62px;
       display: grid;
       place-items: center;
       flex: 0 0 auto;
-      border-radius: 16px;
-      background: #fff;
-      padding: 3px;
-      box-shadow: 0 10px 22px rgba(5, 40, 31, .18);
-      overflow: hidden;
+      border-radius: 0;
+      background: transparent;
+      padding: 0;
+      box-shadow: none;
+      overflow: visible;
     }
 
     .mark img {
@@ -95,7 +95,12 @@
       border-radius: 12px;
     }
 
-    .mark svg,
+    .mark svg {
+      width: 62px;
+      height: 62px;
+      display: block;
+    }
+
     .icon svg,
     .social-link svg {
       width: 24px;
