@@ -1,13 +1,18 @@
 <?php
-// Konfigurasi database lokal/server.
-// Jangan simpan password database asli di repository publik.
-$DB_HOST = getenv('HOTLINE_DB_HOST') ?: 'localhost';
-$DB_USER = getenv('HOTLINE_DB_USER') ?: 'root';
-$DB_PASS = getenv('HOTLINE_DB_PASS') ?: '';
-$DB_NAME = getenv('HOTLINE_DB_NAME') ?: 'sik2';
+// Isi konfigurasi database di server lokal Anda.
+// File ini sengaja dikosongkan agar kredensial tidak tersimpan di GitHub.
 
-$koneksi = mysqli_connect($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
-if (!$koneksi) {
-    die("Database gagal konek");
+$DB_HOST = '';
+$DB_USER = '';
+$DB_PASS = '';
+$DB_NAME = '';
+
+$koneksi = null;
+
+if ($DB_HOST !== '' && $DB_USER !== '' && $DB_NAME !== '') {
+    $koneksi = mysqli_connect($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
+    if (!$koneksi) {
+        die("Database gagal konek");
+    }
 }
 ?>
