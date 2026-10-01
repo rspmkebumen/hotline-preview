@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="id"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Poliklinik Hari Ini - RSU Permata Medika Kebumen</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#eef2ee;font-family:Arial,sans-serif}.app{max-width:760px;margin:auto;background:#f8f8f8;min-height:100vh}
+.hero{background:linear-gradient(135deg,#07543f,#138a68);color:#fff;padding:30px 22px 80px;border-radius:0 0 35px 35px}.brand{font-size:14px;font-weight:900;letter-spacing:3px}.hotline{float:right;color:white;text-decoration:none;border:1px solid #ffffff66;padding:8px 15px;border-radius:20px;font-size:12px}.hero h1{font-size:38px;margin:35px 0 10px}.info{margin:-45px 15px 20px;background:white;padding:20px;border-radius:25px;box-shadow:0 10px 25px #0002;text-align:center;font-weight:bold}#hari{font-size:28px;color:#07543f}#tanggal{font-size:20px;color:#555;margin-top:5px;font-weight:bold}.list{padding:15px;display:grid;gap:18px}.card{background:white;border-radius:25px;overflow:hidden;box-shadow:0 10px 25px #0002}.photo{height:260px;background:#eee;display:flex;justify-content:center;align-items:center}.photo img{height:260px;width:240px;object-fit:contain}.body{padding:18px}.nama{text-align:center;font-size:26px;font-weight:900;color:#07543f}.spesialis{background:linear-gradient(90deg,#07543f,#138a68);color:white;padding:10px;border-radius:15px;text-align:center;font-weight:bold}.jadwal{margin-top:15px;background:#e5f6ef;border:1px solid #138a68;border-radius:15px;padding:15px;text-align:center}.jam{font-size:20px;font-weight:bold}.empty{padding:30px;text-align:center}
+</style></head><body>
+<main class="app"><section class="hero"><a class="hotline" href="index.html">Hotline</a><div class="brand">RSU PERMATA MEDIKA KEBUMEN</div><h1>Poliklinik Hari Ini</h1><p>Informasi dokter yang praktik hari ini</p></section>
+<div class="info"><div>Jadwal Praktik</div><div id="hari">Memuat...</div><div id="tanggal"></div><div id="jumlah"></div></div>
+<section id="list" class="list"></section></main>
+<script>
+const list=document.getElementById("list");
+async function load(){
+try{
+const res=await fetch("./api/poliklinik-hari-ini.php?"+Date.now());
+const json=await res.json();
+document.getElementById("hari").textContent=json.hari_ini;
+const tanggal=new Date();
+const namaBulan=["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+document.getElementById("tanggal").textContent=tanggal.getDate()+" "+namaBulan[tanggal.getMonth()]+" "+tanggal.getFullYear();
+document.getElementById("jumlah").textContent="Menampilkan "+json.jumlah+" dokter praktik";
+if(!json.data.length){list.innerHTML='<div class="empty">Tidak ada dokter praktik hari ini</div>';return;}
+list.innerHTML=json.data.map(d=>'<div class="card"><div class="photo"><img src="'+d.foto_url+'" alt="'+d.nama_dokter+'"></div><div class="body"><div class="nama">'+d.nama_dokter+'</div><div class="spesialis">'+d.spesialis+'</div><div class="jadwal"><div>'+d.hari+'</div><div class="jam">'+d.jam+'</div></div></div></div>').join("");
+}catch(e){console.error(e);list.innerHTML='<div class="empty">Gagal mengambil data</div>'}
+}
+load();
+</script></body></html>
